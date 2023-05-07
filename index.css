@@ -1,0 +1,45 @@
+.nav-page{
+    background-image:url('img/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    padding:0;
+    margin:0;
+    margin:0 auto;
+    border:1px solid #F00;
+}
+
+.top-nav{
+    text-align: center;
+    color: aliceblue;
+    /* background-color: aqua; */
+    font-size: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.name-nav{
+    /* background-color: black; */
+    color: aliceblue;
+    text-align: center;
+    font-size: 350%;
+    font-family: serif;
+    letter-spacing: 10px;
+    border:1px solid #F00;
+}
+
+#button{
+    color: aliceblue;
+    background: transparent;
+    padding: 12px;
+    margin-top: 0px;
+    border:2px solid aliceblue;
+}
+
+#button:hover{
+    color: black;
+    background-color: aliceblue;
+    cursor:pointer;
+}
+
+/* list-style: hover; */

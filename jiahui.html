@@ -4,9 +4,12 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="jiahui.css">
         <link rel="stylesheet" href="index.js">
+        <script src = "index.js"></script>
+        <script src = "jiahui.js"></script>
         <title> Jiahui Zhang </title>
     </head>
     <body>
+
         <div class="top-line">
             <div class="left">
                 <div class="left-1"><h1> M.J. </h1></div>
@@ -15,7 +18,7 @@
             <div class="navigation">
                 <ul>
                     <li><a href="#home"> Home</a></li>
-                    <li><a href="#educational-background"> Resume</a></li>
+                    <li><a href="file/Resume_Jiahui_Zhang_2022.pdf" target="_blank"> CV</a></li>
                     <li><a href="#journey"> About me</a></li>
                     <li><a href="#view"> my view</a></li>
                 </ul>
@@ -34,7 +37,7 @@
             </div>    
         </section>
 
-        <section id="jiahui">
+        <section id="about-me">
             <div class="title">
                 <div class="line-left">
                 </div>
@@ -45,6 +48,23 @@
 
                 </div>
             </div>
+            <div class="content-about-me">
+                <div class="content-about-me-pic">
+                    <img class="pic"src="img/uva.jpg" alt="uva">
+                </div>
+                <div class="content-about-me-content">
+                    <div class="content-about-me-content-list">
+                        <div>
+                            Hello Everyone!
+                        </div>
+                        <div>
+                            &nbsp&nbsp&nbsp I'm Jiahui Zhang, From China.
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
         </section>
 
 
@@ -53,17 +73,35 @@
                 <div class="line-left">
                 </div>
                 <div class="info">
-                    <p class="plabel"> My School</p>
+                    <p class="plabel"> My Experience</p>
                 </div>
                 <div class="line-right">
 
                 </div>
             </div>
+
             <div class="content-template">
-                <div class="content-picture">
-                    <img class="pic"src="img/uva.jpg" alt="uva">
+                <div class="content-template-title">
+                    <button class="content-template-title-1" id="titleuva1" onclick="showuva1()">
+                        <div class="content-template-title-1-1">University of Virginia</div>
+                        <div class="content-template-title-1-2">08/2023 - Present</div>
+                    </button>
+                    <button class="content-template-title-2" id="titleuva2" onclick="showuva2()">
+                        <div class="content-template-title-2-1">
+                            <img src="img/gradesicon.svg" alt="te"width="10%"> Coursework
+                        </div>
+                    </button>
+                    <button class="content-template-title-3" id="title3" onclick="showuva3()">
+                        <div class="content-template-title-3-1">
+                            <img src="img/projecticon.svg" alt="te"width="10%"> Project
+                        </div>
+                    </button>
+                    <!-- <img class="pic"src="img/uva.jpg" alt="uva"> -->
                 </div>
-                <div class="content-title">
+                <div class="content-template-line">
+                </div>
+                <!-- Case1 -->
+                <div class="content-template-content-1" id="showuva1">
                     <div class="content-title-title">
                             University of Virginia
                     </div>
@@ -74,62 +112,396 @@
                         08/2023 -  Present
                     </div>
                 </div>
-                <div class="content-empty">
-                </div>
-                <div class="content-detail">
-                    <p>hahhaa</p>
-                </div>
-            </div>
-            <div class="content-template">
-                <div class="content-picture">
-                    <img class="pic"src="img/psu.jpg" alt="psu">
-                </div>
-                <div class="content-title">
-                    <div class="content-title-title">
-                        Portland State University
+                <!-- Case2 -->
+                <div class="content-template-content-2" id="showuva2">
+                    <div class="content-template-content-2-table">
+                        <table class="table">
+                            <tr>
+                                <th>Course</th>
+                                <th>Grade</th>
+                            </tr>
+                            <tr>
+                                <td>Top: Data Engineering</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Voice Assistants</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Virtual Reality</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Adventures in NLP</td>
+                                <td>A-</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Intro to Web Development</td>
+                                <td>A-</td>
+                            </tr>
+                            <tr>
+                                <td>Elem Software Engr</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Intro to Database MGMT Systems</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Intro to Operating Systems</td>
+                                <td>P</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Code Reading & Review</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Principles of Prog Lang</td>
+                                <td>A</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="content-title-position">
-                        Bachelor of Sciences in Computer Science
-                    </div>
-                    <div class="content-title-time">
-                        09/2019 - 12/2022
-                    </div>
                 </div>
-                <div class="content-empty">
-                </div>
-                <div class="content-detail">
-                    <div class="content-detail-project">
-                        <div class="content-detail-project-title">
-                            Leader
+                <!-- Case3 -->
+                <div class="content-template-content-3" id="showuva3">
+                    <div class="content-template-content-3-list">
+                        <div class="project">
+                            <div class="block-template">
+                                <div class="block-t-pic">
+                                    <img class="pic"src="img/psu.jpg" alt="psu">
+                                </div>
+                                <div class="block-t-text">
+                                    <div class="block-t-text-title">
+                                        Member, Video Conference and Whiteboard platboard platform project
+                                    </div>
+                                    <div class="block-t-text-detail">
+                                        <ul class="block-t-text-detail-list">
+                                            <li id="list-circle"> Developed a platform to realize the multi-person real-time whiteboard meeting, including features like video /voice</li>
+                                            <li id="list-b-circle"> Buildt an interactive whiteboard via React enables funciton like muti-person drawing, </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-template">
+                                <div class="block-t-pic">
+                                    <img class="pic"src="img/psu.jpg" alt="psu">
+                                </div>
+                                <div class="block-t-text">
+                                    <div class="block-t-text-title">
+                                        Member, Video Conference and Whiteboard platboard platform project
+                                    </div>
+                                    <div class="block-t-text-detail">
+                                        <ul class="block-t-text-detail-list">
+                                            <li id="list-circle"> Developed a platform to realize the multi-person real-time whiteboard meeting, including features like video /voice</li>
+                                            <li id="list-b-circle"> Buildt an interactive whiteboard via React enables funciton like muti-person drawing, </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-template">
+                                <div class="block-t-pic">
+                                    <img class="pic"src="img/psu.jpg" alt="psu">
+                                </div>
+                                <div class="block-t-text">
+                                    <div class="block-t-text-title">
+                                        Member, Video Conference and Whiteboard platboard platform project
+                                    </div>
+                                    <div class="block-t-text-detail">
+                                        <ul class="block-t-text-detail-list">
+                                            <li id="list-circle"> Developed a platform to realize the multi-person real-time whiteboard meeting, including features like video /voice</li>
+                                            <li id="list-b-circle"> Buildt an interactive whiteboard via React enables funciton like muti-person drawing, </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="content-detail-project-name">
+                    </div>
+                </div>
 
+            </div>
+            
+
+            <div class="content-template">
+                <div class="content-template-title">
+                    <button class="content-template-title-1" id="titlepsu1" onclick="showpsu1()">
+                        <div class="content-template-title-1-1">Portland State University</div>
+                        <div class="content-template-title-1-2">09/2019 - 12/2022</div>
+                    </button>
+                    <button class="content-template-title-2" id="titlepsu2" onclick="showpsu2()">
+                        <div class="content-template-title-2-1">
+                            <img src="img/gradesicon.svg" alt="te"width="10%"> Coursework
+                        </div>
+                    </button>
+                    <button class="content-template-title-3" id="titlepsu3" onclick="showpsu3()">
+                        <div class="content-template-title-3-1">
+                            <img src="img/projecticon.svg" alt="te"width="10%"> Project
+                        </div>
+                    </button>
+                    <!-- <img class="pic"src="img/uva.jpg" alt="uva"> -->
+                </div>
+                <div class="content-template-line">
+                </div>
+                <!-- Case1 -->
+                <div class="content-template-content-1" id="showpsu1">
+                    <div class="content-title-title">
+                            Portland State University
+                    </div>
+                    <div class="content-title-position">
+                        Bachelor in Computer Science
+                    </div>
+                    <div class="content-title-time">
+                        09/2019 -  12/2022
+                    </div>
+                </div>
+                <!-- Case2 -->
+                <div class="content-template-content-2" id="showpsu2">
+                    <div class="content-template-content-2-table">
+                        <table class="table">
+                            <tr>
+                                <th>Course</th>
+                                <th>Grade</th>
+                            </tr>
+                            <tr>
+                                <td>Top: Data Engineering</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Voice Assistants</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Virtual Reality</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Adventures in NLP</td>
+                                <td>A-</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Intro to Web Development</td>
+                                <td>A-</td>
+                            </tr>
+                            <tr>
+                                <td>Elem Software Engr</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Intro to Database MGMT Systems</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Intro to Operating Systems</td>
+                                <td>P</td>
+                            </tr>
+                            <tr>
+                                <td>Top: Code Reading & Review</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Principles of Prog Lang</td>
+                                <td>A</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- Case3 -->
+                <div class="content-template-content-3" id="showpsu3">
+                    <div class="content-template-content-3-list">
+                        <div class="project">
+                            <div class="block-template">
+                                <div class="block-t-pic">
+                                    <img class="pic"src="img/psu.jpg" alt="psu">
+                                </div>
+                                <div class="block-t-text">
+                                    <div class="block-t-text-title">
+                                        Member,<a href="https://github.com/Jiahui0223/Jiahui_CV">Video Conference and Whiteboard platboard platform project</a>
+                                    </div>
+                                    <div class="block-t-text-detail">
+                                        <ul class="block-t-text-detail-list">
+                                            <li id="list-circle">  Developed a platform to realize the multi-person real-time whiteboard meeting, including features like video/voice meetings 
+                                                and whiteboard sharing. </li>
+                                            <li id="list-b-circle">  Built an interactive whiteboard via React enables functions like multi-person drawing, dynamic shapes, and 
+                                                automotive uploading. </li>
+                                            <li  id="list-b-circle">Involved in the progress of designing voice and video conference systems and ensured the recording feature could 
+                                                record conferences and upload them to the database efficiently. </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-template">
+                                <div class="block-t-pic">
+                                    <img class="pic"src="img/psu.jpg" alt="psu">
+                                </div>
+                                <div class="block-t-text">
+                                    <div class="block-t-text-title">
+                                        Leader,<a href="https://github.com/Jiahui0223/Jiahui_CV"> C-Tran Portland public transportation API Project</a>
+                                    </div>
+                                    <div class="block-t-text-detail">
+                                        <ul class="block-t-text-detail-list">
+                                            <li id="list-circle"> Collected Portland Transportation data from several websites and transformed data formats and input into the database;</li>
+                                            <li id="list-circle">  Cleaned and integrated data to Apache Kafka to transform and validate datasets.</li>
+                                            <li id="list-circle">Used the API tools to visualize the C-Tran's route heatmap through Mapbox GL JS</li>
+                                            <li id="list-circle"> Made recommendations to the Portland Public transportation office by analyzing transportation performance's efficiency and 
+                                                effectiveness. </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-template">
+                                <div class="block-t-pic">
+                                    <img class="pic"src="img/psu.jpg" alt="psu">
+                                </div>
+                                <div class="block-t-text">
+                                    <div class="block-t-text-title">
+                                        Leader,<a href="https://github.com/Jiahui0223/Jiahui_CV"> Project of Handwriting diagnosis</a>
+                                    </div>
+                                    <div class="block-t-text-detail">
+                                        <ul class="block-t-text-detail-list">
+                                            <li id="list-circle"> Developed a Natural Language Processing(NLP) based handwriting diagnosis recognition model based on deep learning 
+                                                methodologies</li>
+                                            <li id="list-circle"> Led team members to leveraged different NLP and deep learning models such as RNN(recurrent neural network), CNN 
+                                                (Convolution Neural Networks), SRU++(an extension of Simple Recurrent Unit), and LSTM(Long short-term Memory) in 
+                                                Python on Google Colab and compared models' performances through accuracy and efficiency.</li>
+                                            <li id="list-circle">Modified features and parameters of the models to select the most suitable algorithm for our project</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
+
+
             <div class="content-template">
-                <div class="content-picture">
-                    <img class="pic"src="img/ccut.jpg" alt="ccut">
+                <div class="content-template-title">
+                    <button class="content-template-title-1" id="titleccut1" onclick="showccut1()">
+                        <div class="content-template-title-1-1">Changchun University of Technology</div>
+                        <div class="content-template-title-1-2">09/2017 - 09/2019</div>
+                    </button>
+                    <button class="content-template-title-2" id="titleccut2" onclick="showccut2()">
+                        <div class="content-template-title-2-1">
+                            <img src="img/gradesicon.svg" alt="te"width="10%"> Coursework
+                        </div>
+                    </button>
+                    <button class="content-template-title-3" id="titleccut3" onclick="showccut3()">
+                        <div class="content-template-title-3-1">
+                            <img src="img/projecticon.svg" alt="te"width="10%"> Project
+                        </div>
+                    </button>
+                    <!-- <img class="pic"src="img/uva.jpg" alt="uva"> -->
                 </div>
-                <div class="content-title">
+                <div class="content-template-line">
+                </div>
+                <!-- Case1 -->
+                <div class="content-template-content-1" id="showccut1">
                     <div class="content-title-title">
-                        Changchun University of Technology
+                            Portland State University
                     </div>
                     <div class="content-title-position">
-                        Bachelor of Sciences in Computer Science and Information
+                        Bachelor in Computer Science
                     </div>
                     <div class="content-title-time">
-                        09/2018 - 06/2019
+                        09/2019 -  12/2022
                     </div>
                 </div>
-                <div class="content-empty">
+                <!-- Case2 -->
+                <div class="content-template-content-2" id="showccut2">
+                    <div class="content-template-content-2-table">
+                        <table class="table">
+                            <tr>
+                                <th>Course</th>
+                                <th>Grade</th>
+                            </tr>
+                            <tr>
+                                <td>Calculus III</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Calculus II</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Digital Systems</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Linear Algebra</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Introduction to Computer Hardware</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Digital Circuits</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Caculus IV</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Programming Systems Curriculum Design</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Programming Systems</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Data Structure</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Computer Systems Programming</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Calculus I</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Introduction to Computer Science</td>
+                                <td>A</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="content-detail">
-                    <p>hahhaa</p>
+                <!-- Case3 -->
+                <div class="content-template-content-3" id="showccut3">
+                    <div class="content-template-content-3-list">
+                        <div class="project">
+                            <div class="block-template">
+                                <div class="block-t-pic">
+                                    <img class="pic"src="img/psu.jpg" alt="psu">
+                                </div>
+                                <div class="block-t-text">
+                                    <div class="block-t-text-title">
+                                        Team Leader, <a href="https://github.com/Jiahui0223/Jiahui_CV">On-Campus food delivery App Project</a>
+                                    </div>
+                                    <div class="block-t-text-detail">
+                                        <ul class="block-t-text-detail-list-201809">
+                                            <li id="list-circle">Coordinated project shareholders to develop an on-campus food delivery application in order to convenient students' 
+                                                life and participated in the China “Internet+” college students' innovation and entrepreneurship competition</li>
+                                            <li id="list-circle"> Leveraged GitHub for team coordination action, organized team meetings with shareholders </li>
+                                            <li id="list-circle">Designed the application's function and API and developed a mobile application, mainly the backend in SQL for data 
+                                                storage logic.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
+
         </section>
+
         <section id="journey">
             <div class="title">
                 <div class="line-left">
@@ -142,25 +514,28 @@
                 </div>
             </div>
 
-            <div class="content-template">
-                <div class="content-picture">
-                    <img class="pic"src="img/ccut.jpg" alt="ccut">
-                </div>
-                <div class="content-title">
-                    <div class="content-title-title">
-                        <p> China Life Insurance Inc. (Henan Barnch) Zhengzhou, CN </p>
+            <div class="journey-content">
+                <div class="gallery-pic" id="gallerydiv">
+                    <!-- <div class="img">
+                        <img src="img/gallery/1jiahui.jpg" class="gallery-pic-img" alt="2">
                     </div>
-                    <div class="content-title-position">
-                        <p>Human Resources Database Engineer Intern</p>
+                    <div class="img">
+                        <img src="img/gallery/2jiahui.jpg" class="gallery-pic-img" alt="2">
                     </div>
-                    <div class="content-title-time">
-                        <p> 08/2021 - 10/2021 </p>
-                    </div>
+                    <div class="img">
+                        <img src="img/gallery/3jiahui.jpg" class="gallery-pic-img" alt="2">
+                    </div> -->
                 </div>
-                <div class="content-empty">
-                </div>
-                <div class="content-detail">
-                    <p>hahhaa</p>
+                <script>
+                    var x ="", i;
+                    for (i=1; i<=8; i++) {
+                        x = x + '<div class="img"> <img src="img/gallery/' + i + 'jiahui.jpg" class="gallery-pic-img"> </div>';
+                    }
+                    document.getElementById("gallerydiv").innerHTML = x;
+                </script>
+
+                <div class="gallery-folder">
+
                 </div>
             </div>
 
@@ -175,6 +550,22 @@
                 </div>
                 <div class="line-right-black">
 
+                </div>
+            </div>
+            <div class="paper-detail">
+                <div class="paperleft">
+                    <div class="papertitle">
+                        Shaow Removal Based on Supervised Learning TOD LINK
+                    </div>
+                    <div class="papertext">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing eli
+                        t. Inventore ullam similique amet veritatis. Cum doloribus
+                         delectus id temporibus impedit, sint hic et. Praesentium 
+                        quo, aliquid hic rerum nobis nisi. Eaque?
+                    </div>
+                </div>
+                <div class="paperright">
+                    <p> PIC TODO LIST</p>
                 </div>
             </div>
         </section>
@@ -219,17 +610,28 @@
 
             <div class="social-media-content-template">
                 <div class="info-me">
-
+                    <div class="signature_first_name">
+                        <img width="6%" src="img/Jiahui-Signature.svg" alt="12345">
+                    </div>
+                    <div class="signature_last_name">
+                        <img width="7%" src="img/Zhang-Signature.svg" alt="123">
+                    </div>
                 </div>
                 <div class="icon-social-media">
-                    <div class="icon1">
-                        <img src="img/linkedin.svg" alt="svg1">
+                    <div class="icon1" id="socialsvg">
+                        <a href="https://www.linkedin.com/in/jiahui-zhang-98b775241/">
+                            <img id="icon" src="img/linkedin.svg" alt="svg1">
+                        </a>
                     </div>
-                    <div class="icon2">
-                        <img src="img/github.svg" alt="svg2">
+                    <div class="icon2" id="socialsvg">
+                        <a href="https://github.com/Jiahui0223">
+                            <img id="icon" src="img/github.svg" alt="svg12">
+                        </a>
                     </div>
-                    <div class="icon3">
-                        <img src="img/wechat.svg" alt="svg3">
+                    <div class="icon3" id="socialsvg">
+                        <a href="https://www.instagram.com/dylan_zhang6/">
+                            <img id="icon" src="img/Instagram_logo_2016.svg" alt="svg133">
+                        </a>
                     </div>
 
                 </div>
@@ -285,8 +687,8 @@ Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Inte
 
             </p>
         </div>
-    </body>
 
+    </body>
 
 
   <!-- <script type="text/javascript">

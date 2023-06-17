@@ -541,6 +541,21 @@ body .lock-scroll {
     border-radius: 10%;
 }
 
+/* HIHIHIHI */
+.block-template{
+    margin-bottom: 20px;
+}
+.block-t-top{
+    display: flex;
+    max-width: 500px;
+}
+
+.block-t-pic{
+    width: 150px;
+    height: auto;
+
+    border-radius: 10%;
+}
 
 
 
@@ -618,7 +633,7 @@ body .lock-scroll {
     flex-direction: column;
     justify-content: center;
     font-size: 17px;
-    border:1px solid rgb(102, 53, 143);
+    /* border:1px solid rgb(102, 53, 143); */
 }
 
 .gallery-name-1{
@@ -626,7 +641,7 @@ body .lock-scroll {
     grid-template-columns: 1fr 2fr;
     margin-top: 20px;
     margin-bottom: 20px;
-    border:1px solid rgb(212, 13, 13);
+    /* border:1px solid rgb(212, 13, 13); */
 }
 .gallery-name .icon1{
     /* margin: 20px; */
@@ -647,7 +662,7 @@ body .lock-scroll {
 }
 .gallery-name-1-1{
     font-size: 110%;
-    border:1px solid rgb(93, 179, 167);
+    /* border:1px solid rgb(93, 179, 167); */
     margin-bottom: 5%;
 }
 

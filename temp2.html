@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function printText(text, container) {
+  var i = 0;
+  var timer = setInterval(function() {
+    if (i < text.length) {
+      container.innerHTML += text.charAt(i);
+      i++;
+    } else {
+      clearInterval(timer);
+    }
+  }, 100);
+}
+
+window.onload = function() {
+  var container = document.getElementById('container');
+  var text = 'jiahui zhang';
+  printText(text, container);
+};
+</script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+</html>

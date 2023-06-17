@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="jiahui.css">
         <link rel="stylesheet" href="index.js">
         <script src = "index.js"></script>
@@ -9,107 +10,128 @@
         <title> Jiahui Zhang </title>
     </head>
     <body>
-
-        <div class="top-line">
-            <div class="left">
-                <div class="left-1"><h1> M.J. </h1></div>
-                <div class="left-2"><h1> Archires </h1></div>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <span class="brand-initials">M. J. </span>
+                <span class="brand-name">Archires</span>
             </div>
-            <div class="navigation">
-                <ul>
-                    <li><a href="#home"> Home</a></li>
-                    <li><a href="file/Resume_Jiahui_Zhang_2022.pdf" target="_blank"> CV</a></li>
-                    <li><a href="#journey"> About me</a></li>
-                    <li><a href="#view"> my view</a></li>
-                </ul>
+            <ul class="navbar-menu">
+                <li><a href="#"> Home</a></li>
+                <li><a href="file/Resume_Jiahui_Zhang_2022.pdf" target="_blank"> CV</a></li>
+                <li><a href="#journey"> Gallery</a></li>
+                <li><a href="#view"> my view</a></li>
+            </ul>
+            <div class="navbar-toggle" id="navbar-toggle"type="button" onclick="navbarToggleList()">
+                &#9776;
             </div>
-        </div>
+            <ul class="navbar-list" id="navbar-list">
+                <li><a href="#"> Home</a></li>
+                <li><a href="file/Resume_Jiahui_Zhang_2022.pdf" target="_blank"> CV</a></li>
+                <li><a href="#journey"> Gallery</a></li>
+                <li><a href="#view"> My view</a></li>
+            </ul>
+        </nav>
 
         <section id="home">
-            <!-- <img src="img/jiahui.jpg" alt=""> -->
-            <div class="sayhi">
-                <div class="sayhi-hi">
+            <div class="home-word" id="home-word">
+
+                <!-- <div class="word-initials">
                     <p>Hi, I'm</p>
                 </div>
-                <div class="sayhi-name">
+                <div class="word-name">
                     <p>Jiahui Zhang</p>
-                </div>
-            </div>    
+                </div> -->
+            </div>
+            <script>
+                function printText(text, container) {
+                    var i = 0;
+                    var timer = setInterval(function() {
+                        if (i < text.length) {
+                            container.innerHTML += text.charAt(i);
+                            i++;
+                        } else {
+                        clearInterval(timer);
+                        }
+                    }, 200);
+                }
+
+                window.onload = function() {
+                    var container = document.getElementById('home-word');
+                    var text = 'Jiahui Zhang';
+                    printText(text, container);
+                };
+            </script>
+            <div class="home-canvas">
+                <canvas id="particle-canvas"></canvas>
+            </div>
+            <script src="particle-canvas.js"></script>    
         </section>
 
         <section id="about-me">
-            <div class="title">
-                <div class="line-left">
-                </div>
-                <div class="info">
-                    <p class="plabel"> About Me</p>
-                </div>
-                <div class="line-right">
 
+            <div class="title-light">
+                <div class="title-phone">BIOGRAPHY</div>
+                <div class="line-left"></div>
+                <div class="title-info">
+                    <span>About Me</span>
                 </div>
+                <div class="line-right"></div>
             </div>
-            <div class="content-about-me">
-                <div class="content-about-me-pic">
+
+            <div class="about-section">
+                <div class="about-pic">
                     <img class="pic"src="img/uva.jpg" alt="uva">
                 </div>
-                <div class="content-about-me-content">
-                    <div class="content-about-me-content-list">
-                        <div>
-                            Hello Everyone!
-                        </div>
-                        <div>
-                            &nbsp&nbsp&nbsp I'm Jiahui Zhang, From China.
-                        </div>
-                        
+                <div class="about-content">
+                    <div class="about-intro">
+                        I'm Jiahui Zhang and 
+                        <span class="dynamic-text" id="dynamic-text"></span>
+                    </div>
+                    <div class="about-text">
+                        &nbsp&nbsp&nbsp My name is Jiahui Zhang. I am a Web 
+                        Developer,and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and 
+                        knowledge necessary to make your project a success.
                     </div>
                 </div>
-
+                <script src="dynamic-text.js"></script>    
             </div>
         </section>
 
 
         <section id="educational-background">
-            <div class="title">
-                <div class="line-left">
+            <div class="title-light">
+                <div class="title-phone">BIOGRAPHY</div>
+                <div class="line-left"></div>
+                <div class="title-info">
+                    <span>My Experience</span>
+                    <!-- <p class="plabel"> About Me</p> -->
                 </div>
-                <div class="info">
-                    <p class="plabel"> My Experience</p>
-                </div>
-                <div class="line-right">
-
-                </div>
+                <div class="line-right"></div>
             </div>
 
             <div class="content-template">
                 <div class="content-template-title">
                     <button class="content-template-title-1" id="titleuva1" onclick="showuva1()">
-                        <div class="content-template-title-1-1">University of Virginia</div>
-                        <div class="content-template-title-1-2">08/2023 - Present</div>
+                        <span class="content-enlarge">Aug. 2023 - Today</span>
                     </button>
                     <button class="content-template-title-2" id="titleuva2" onclick="showuva2()">
-                        <div class="content-template-title-2-1">
-                            <img src="img/gradesicon.svg" alt="te"width="10%"> Coursework
-                        </div>
+                        <span class="content-enlarge"><img src="img/gradesicon.svg" alt="te"width="10%"> Coursework</span>
                     </button>
-                    <button class="content-template-title-3" id="title3" onclick="showuva3()">
-                        <div class="content-template-title-3-1">
-                            <img src="img/projecticon.svg" alt="te"width="10%"> Project
-                        </div>
+                    <button class="content-template-title-3" id="titleuva3" onclick="showuva3()">
+                        <span class="content-enlarge"><img src="img/projecticon.svg" alt="te"width="10%"> Project</span>
                     </button>
-                    <!-- <img class="pic"src="img/uva.jpg" alt="uva"> -->
                 </div>
-                <div class="content-template-line">
-                </div>
+
+                <div class="content-template-line"></div>
+
                 <!-- Case1 -->
                 <div class="content-template-content-1" id="showuva1">
-                    <div class="content-title-title">
-                            University of Virginia
+                    <div class="content-left">
+                        <div>B.S. in Computer Science at <strong> University of Virginia</strong></div>
+                        <div>To Be Continued!</div>
                     </div>
-                    <div class="content-title-position">
-                        Master of Science in Computer Science
-                    </div>
-                    <div class="content-title-time">
-                        08/2023 -  Present
+                    <div class="content-right">
+                        <img class="content-logo" src="img/uva_primary_logo.png" alt="123">
                     </div>
                 </div>
                 <!-- Case2 -->
@@ -225,8 +247,7 @@
             <div class="content-template">
                 <div class="content-template-title">
                     <button class="content-template-title-1" id="titlepsu1" onclick="showpsu1()">
-                        <div class="content-template-title-1-1">Portland State University</div>
-                        <div class="content-template-title-1-2">09/2019 - 12/2022</div>
+                        <div class="content-template-title-1-1">Sep. 2019 - Dec. 2022</div>
                     </button>
                     <button class="content-template-title-2" id="titlepsu2" onclick="showpsu2()">
                         <div class="content-template-title-2-1">
@@ -244,14 +265,12 @@
                 </div>
                 <!-- Case1 -->
                 <div class="content-template-content-1" id="showpsu1">
-                    <div class="content-title-title">
-                            Portland State University
+                    <div class="content-left">
+                        <div>B.S. in Computer Science at <strong> Portland State University</strong></div>
+                        <div>Average GPA: 3.9/4.0</div>
                     </div>
-                    <div class="content-title-position">
-                        Bachelor in Computer Science
-                    </div>
-                    <div class="content-title-time">
-                        09/2019 -  12/2022
+                    <div class="content-right">
+                        <img class="content-logo" src="img/PSU_logo_transparent.png" alt="123">
                     </div>
                 </div>
                 <!-- Case2 -->
@@ -378,8 +397,7 @@
             <div class="content-template">
                 <div class="content-template-title">
                     <button class="content-template-title-1" id="titleccut1" onclick="showccut1()">
-                        <div class="content-template-title-1-1">Changchun University of Technology</div>
-                        <div class="content-template-title-1-2">09/2017 - 09/2019</div>
+                        <div class="content-template-title-1-1">09/2017 - 09/2019</div>
                     </button>
                     <button class="content-template-title-2" id="titleccut2" onclick="showccut2()">
                         <div class="content-template-title-2-1">
@@ -397,14 +415,12 @@
                 </div>
                 <!-- Case1 -->
                 <div class="content-template-content-1" id="showccut1">
-                    <div class="content-title-title">
-                            Portland State University
+                    <div class="content-left">
+                        <div>B.S. in Computer Science at <strong> Changchun University</strong></div>
+                        <div>Average GPA: 3.9/4.0</div>
                     </div>
-                    <div class="content-title-position">
-                        Bachelor in Computer Science
-                    </div>
-                    <div class="content-title-time">
-                        09/2019 -  12/2022
+                    <div class="content-right">
+                        <img class="content-logo-ccut" src="img/ccutlogo.png" alt="123">
                     </div>
                 </div>
                 <!-- Case2 -->
@@ -476,7 +492,7 @@
                         <div class="project">
                             <div class="block-template">
                                 <div class="block-t-pic">
-                                    <img class="pic"src="img/psu.jpg" alt="psu">
+                                    <img class="pic" src="img/psu.jpg" alt="psu">
                                 </div>
                                 <div class="block-t-text">
                                     <div class="block-t-text-title">
@@ -503,15 +519,13 @@
         </section>
 
         <section id="journey">
-            <div class="title">
-                <div class="line-left">
+            <div class="title-light">
+                <div class="line-left"></div>
+                <div class="title-info">
+                    <span>My Journey</span>
+                    <!-- <p class="plabel"> About Me</p> -->
                 </div>
-                <div class="info">
-                    <p class="plabel"> My Journey</p>
-                </div>
-                <div class="line-right">
-
-                </div>
+                <div class="line-right"></div>
             </div>
 
             <div class="journey-content">
@@ -528,31 +542,70 @@
                 </div>
                 <script>
                     var x ="", i;
-                    for (i=1; i<=8; i++) {
+                    for (i=1; i<=13; i++) {
                         x = x + '<div class="img"> <img src="img/gallery/' + i + 'jiahui.jpg" class="gallery-pic-img"> </div>';
                     }
                     document.getElementById("gallerydiv").innerHTML = x;
                 </script>
 
                 <div class="gallery-folder">
-
+                    <div class="gallery-title">M.J. Photo Gallery</div>
+                    <div class="gallery-name">
+                        <div class="gallery-name-1">
+                            <div class="icon1">
+                                <img class="galleryicon"  src="img/project-pic.svg" alt="test">
+                            </div>
+                            <div class="gallery-name-1-1">
+                                Project Repository
+                            </div>
+                            <div class="gallery-name-1-2">
+                                Documentaion contains the development process for all projects.
+                            </div>
+                        </div>
+                        <div class="gallery-name-1">
+                            <div class="icon1">
+                                <img class="galleryicon" src="img/daily-pic.svg" alt="test">
+                            </div>
+                            <div class="gallery-name-1-1">
+                                Jiahui's Daily Life
+                            </div>
+                            <div class="gallery-name-1-2">
+                                Daily life and some trivial photos
+                            </div>
+                        </div>
+                        <div class="gallery-name-1">
+                            <div class="icon1">
+                                <img class="galleryicon" src="img/travel-pic.svg" alt="test">
+                            </div>
+                            <div class="gallery-name-1-1">
+                                Travel Log
+                            </div>
+                            <div class="gallery-name-1-2">
+                                Jiahui's leisure life and landscape photos
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </section>
 
-        <section id="paper">
-            <div class="title-black">
-                <div class="line-left-black">
-                </div>
-                <div class="info-black">
-                    <p class="plabel-black"> My Paper </p>
-                </div>
-                <div class="line-right-black">
 
+
+
+        <section id="paper">
+
+            <div class="title-dark">
+                <div class="line-left"></div>
+                <div class="title-info">
+                    <span>My Paper</span>
                 </div>
+                <div class="line-right"></div>
             </div>
             <div class="paper-detail">
+                <span> Coming Soon</span>
+            </div>
+            <!-- <div class="paper-detail">
                 <div class="paperleft">
                     <div class="papertitle">
                         Shaow Removal Based on Supervised Learning TOD LINK
@@ -567,54 +620,108 @@
                 <div class="paperright">
                     <p> PIC TODO LIST</p>
                 </div>
-            </div>
+            </div> -->
         </section>
 
         <section id="view">
-            <div class="title">
-                <div class="line-left">
+            <div class="title-light">
+                <div class="line-left"></div>
+                <div class="title-info">
+                    <span>More About Jiahui</span>
+                    <!-- <p class="plabel"> About Me</p> -->
                 </div>
-                <div class="info">
-                    <p class="plabel"> More Abotu Jiahui </p>
-                </div>
-                <div class="line-right">
-
-                </div>
+                <div class="line-right"></div>
             </div>
 
-            <div class="content-template-2">
-                <div class="title-2">
-                    <p> Life Minister, Chinese Student&Scholars Association (CSSA) at Portland State University</p>
+            <div class="life">
+                <div class="module">
+                    <div class="imgborder">
+                        <img src="img/ccut.jpg" alt="img1231" onclick="openModal('modal1','modal-image1','img/ccut.jpg')">
+                    </div>
+                    <div class="module-text" onclick="openModal('modal1','modal-image1','img/ccut.jpg')">
+                        <span>Jiahui's Log</span>
+                        <!-- <span> Heihei</span> -->
+                    </div>
                 </div>
-                <div class="pic-2">
-                    <p> PIC </p>
+                <div class="module">
+                    <div class="imgborder">
+                        <img src="img/moreaboutjiahui/pic2.JPG" alt="img1231" onclick="openModal('modal2','modal-image2','img/ccut.jpg')">
+                    </div>
+                    <div class="module-text" onclick="openModal('modal2','modal-image2','img/ccut.jpg')">
+                        <span>Coming Soon</span>
+                    </div>
                 </div>
-                <div class="content-2">
-                    <p>What should I do here </p>
+                <div class="module">
+                    <div class="imgborder">
+                        <img src="img/moreaboutjiahui/pic3.JPG" alt="img1231" onclick="openModal('modal3','modal-image3','img/ccut.jpg')">
+                    </div>
+                    <div class="module-text" onclick="openModal('modal3','modal-image3','img/ccut.jpg')">
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal1" id="modal1">
+                <div class="modal-content">
+                    <img src="" alt="Modal Image" id="modal-image1">
+                    <div class="modal-info">
+                        <h1 class="modal-title">Jiahui's Life</h1>
+                        <h2 class="modal-creator">By Jiahui Zhang/ 20 MARCH 2022</h2>
+                    </div>
+                    <div class="modal-text">
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam ut, eum culpa i
+                            mpedit itaque enim laboriosam neque facere consequuntur repellendus deleniti 
+                            harum quae aperiam ex optio nobis blanditiis nihil ullam.
+                        </p>
+                    </div>
+                    <span class="close" onclick="closeModal('modal1')">&times;</span>
+                </div>
+            </div>
+            <div class="modal2" id="modal2">
+                <div class="modal-content">
+                    <img src="" alt="Modal Image" id="modal-image2">
+                    <p>Title _ Coming Soon</p>
+                    <span class="close" onclick="closeModal('modal2')">&times;</span>
+                </div>
+            </div>
+            <div class="modal3" id="modal3">
+                <div class="modal-content">
+                    <img src="" alt="Modal Image" id="modal-image3">
+                    <div class="modal-info">
+                        <h1 class="modal-title">Title - Coming Soon</h1>
+                        <h2 class="modal-creator"> Creator</h2>
+                    </div>
+                    <div class="modal-text">
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam ut, eum culpa i
+                            mpedit itaque enim laboriosam neque facere consequuntur repellendus deleniti 
+                            harum quae aperiam ex optio nobis blanditiis nihil ullam.
+                        </p>
+                    </div>
+                    <span class="close" onclick="closeModal('modal3')">&times;</span>
                 </div>
             </div>
 
         </section>
 
         <section id="subscription">
-            <div class="title">
-                <div class="line-left">
+            <div class="title-light">
+                <div class="line-left"></div>
+                <div class="title-info">
+                    <span>Get in Touch</span>
+                    <!-- <p class="plabel"> About Me</p> -->
                 </div>
-                <div class="info">
-                    <p class="plabel"> Get in Touch </p>
-                </div>
-                <div class="line-right">
-
-                </div>
+                <div class="line-right"></div>
             </div>
 
             <div class="social-media-content-template">
                 <div class="info-me">
                     <div class="signature_first_name">
                         <img width="6%" src="img/Jiahui-Signature.svg" alt="12345">
+                        <img width="6%" src="img/Zhang-Signature.svg" alt="123">
                     </div>
                     <div class="signature_last_name">
-                        <img width="7%" src="img/Zhang-Signature.svg" alt="123">
+                        <!-- <img width="7%" src="img/Zhang-Signature.svg" alt="123"> -->
                     </div>
                 </div>
                 <div class="icon-social-media">
@@ -641,7 +748,7 @@
 
         </section>
 
-        <div class="Lorem">
+        <!-- <div class="Lorem">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam q
                 ui illum fugit et unde aliquam dolore sed, odio nihil earum corpo
                 ris aperiam molestias qu
@@ -660,7 +767,6 @@ Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In
 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. 
 Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. 
 Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. 
-
             </p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. 
@@ -686,9 +792,55 @@ Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor,
 Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. 
 
             </p>
-        </div>
+        </div> -->
 
     </body>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-logo"> 
+                    <div class="logo">Mi.Ji. Archires </div>
+                    <div class="text">There are no shortcuts in life, but there are plenty of beautiful scenic routes along the way.</div>
+                </div>
+                <div class="footer-catalog">
+                    <div class="sub-catalog">
+                      <div class="title">Mi.Ji. Home</div>
+                      <div class="sub-title">
+                        <span>FAQs</span>
+                        <span>Contact Me</span>
+                      </div>
+                    </div>
+                    <div class="sub-catalog">
+                      <div class="title">Jiahui</div>
+                      <div class="sub-title">
+                        <span>Curriculum Vitae</span>
+                        <span>Project Description</span>
+                        <span>Jiahui's Journey</span>
+                      </div>
+                    </div>
+                    <div class="sub-catalog">
+                      <div class="title">
+                        Mi.ji.'s Gallery
+                      </div>
+                      <div class="sub-title">
+                        <span>Coming Soon</span>
+                        <span>Coming Soon</span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <span>&copy; 2023 Mi.Ji. Archires. All rights reserved.</span>
+                </div>
+                <div class="terms">
+                    <span>Privacy Policy</span>
+                    <span>We No Longer Sell/Share Your Information</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
 
   <!-- <script type="text/javascript">

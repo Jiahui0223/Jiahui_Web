@@ -4,10 +4,6 @@ body{
     /* overflow: hidden; */
 }
 
-/* body .lock-scroll{
-    overflow: hidden;
-} */
-
 body .lock-scroll {
     overflow: hidden;
     position: fixed;
@@ -132,7 +128,6 @@ body .lock-scroll {
     /* background-size: contain; */
     /* background-attachment: fixed; */
 
-    /* margin-top: 100px; */
 }
 
 .home-word {
@@ -188,7 +183,6 @@ body .lock-scroll {
 
 
 
-
 .home-canvas{
     overflow: hidden;
     margin: 0;
@@ -211,10 +205,7 @@ body .lock-scroll {
 }
 
 @media screen and (max-width: 425px) {
-    .word-initials{
-        font-size: 1.5rem;
-    }
-    .word-name{
+    .home-word{
         font-size: 1.5rem;
     }
 }
@@ -310,6 +301,7 @@ body .lock-scroll {
     }
 }
 
+
 /* 
  * Content - About - Me
  */
@@ -372,8 +364,10 @@ body .lock-scroll {
         /* padding-left: 10%; */
         /* padding-right: 30px; */
     }
+    .about-intro{
+        font-size: 18px;
+    }
 }
-
 
 
 /* 
@@ -411,15 +405,6 @@ body .lock-scroll {
     /* outline: none; */
 }
 
-.content-enlarge{
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
-
-.content-enlarge:hover{
-    transform: scale(1.1);
-}
-
 .content-template-title-2{
     cursor: pointer;
     border: none;
@@ -445,6 +430,17 @@ body .lock-scroll {
     /* font-size: 15px; */
         /* outline: none; */
 }
+
+.content-enlarge{
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.content-enlarge:hover{
+    transform: scale(1.1);
+}
+
+
 
 .content-template-line{
     background-color: #119CC0;
@@ -472,10 +468,10 @@ body .lock-scroll {
 }
 
 .content-template-content-1 .content-right{
-    /* justify-content: flex-end; */
-    /* text-align: left; */
-    /* background-color: #119CC0; */
+    display: block;
 }
+
+
 
 .content-logo{
     width: 270px;
@@ -557,7 +553,38 @@ body .lock-scroll {
     border-radius: 10%;
 }
 
-
+@media screen and (max-width: 425px) {
+    .content-template{
+        grid-template-columns: 1fr;
+        /* grid-template-columns: 50fr 1fr 30fr; */
+    }
+    .content-template-title{
+        flex-direction: row;
+    }
+    .content-template-title-1{
+        font-size: 10px;
+    }
+    .content-template-title-2{
+        font-size: 12px;
+    }
+    
+    .content-template-title-3{
+        font-size: 12px;
+    }
+    .icon-text{
+        /* display: none; */
+    }
+    .content-template-content-1 .content-right{
+        display: none;
+    }
+    
+    .content-template-content-1{
+        font-size: 12px;
+    }
+    .block-template{
+        font-size: 12px;
+    }
+}
 
 /*
  *******************************
@@ -669,6 +696,33 @@ body .lock-scroll {
 .gallery-name-1-2{
     font-size: 100%;
     /* border:1px solid rgb(93, 179, 167); */
+}
+
+@media screen and (max-width: 425px) {
+    .gallery-pic .img{
+        height: 80px;
+    }
+    .gallery-title{
+        font-size: 110%;
+    }
+    .gallery-name{
+        font-size: 13px;
+    }
+    .gallery-name-1{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        /* border:1px solid rgb(212, 13, 13); */
+    }
+    .gallery-name-1-1{
+        font-size: 80%;
+
+    }
+    
+    .gallery-name-1-2{
+        display: none;
+        /* font-size: 90%; */
+    }
 }
 
 
@@ -899,17 +953,23 @@ HERERERERER
 }
 
 
+@media screen and (max-width: 425px) {
+    .life{
+        flex-direction: column;
+    }
+    .module .imgborder{
+        width: 210px;
+        height: 140px;
+    }
 
-
-
-
-
-
-
-
-
-
-
+    .module .module-text {
+        margin-bottom: 10px;
+    }
+    .modal-content{
+        /* max-width: 100px; */
+        max-height: 70vh;
+    }
+}
 
 
 
@@ -932,6 +992,7 @@ HERERERERER
 }
 
 footer{
+    border:1px solid rgb(223, 35, 35);
     height: 200px;
     background-color: #000;
     color: white;

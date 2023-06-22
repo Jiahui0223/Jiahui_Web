@@ -1,27 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script>
-function printText(text, container) {
-  var i = 0;
-  var timer = setInterval(function() {
-    if (i < text.length) {
-      container.innerHTML += text.charAt(i);
-      i++;
-    } else {
-      clearInterval(timer);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Common styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
-  }, 100);
-}
 
-window.onload = function() {
-  var container = document.getElementById('container');
-  var text = 'jiahui zhang';
-  printText(text, container);
-};
-</script>
+    /* Desktop layout */
+    .gallery-pic {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .gallery-pic .img {
+      flex: 0 0 33.33%;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 767px) {
+      .gallery-pic .img {
+        flex: 0 0 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-<div id="container"></div>
+  <div class="container">
+    <div class="gallery-pic" id="gallerydiv">
+      <!-- Dynamically generated images -->
+    </div>
+    <script>
+      var x ="", i;
+      for (i=1; i<=13; i++) {
+          x = x + '<div class="img"> <img src="img/gallery/' + i + 'jiahui.jpg" class="gallery-pic-img"> </div>';
+      }
+      document.getElementById("gallerydiv").innerHTML = x;
+      </script>
+
+    <div class="gallery-folder">
+      <div class="gallery-title">M.J. Photo Gallery</div>
+      <div class="gallery-name">
+        <div class="gallery-name-1">
+          <div class="icon1">
+            <img class="galleryicon" src="img/project-pic.svg" alt="test">
+          </div>
+          <div class="gallery-name-1-1">
+            Project Repository
+          </div>
+          <div class="gallery-name-1-2">
+            Documentation contains the development process for all projects.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

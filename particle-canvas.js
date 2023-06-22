@@ -8,6 +8,9 @@ const height = computerStyle.height;
 
 const canvasHeight = parseInt(height, 10);
 
+const minScreenSize = 600;
+const reducedParticleCount = 25;
+
 let particles = [];
 
 function Particle(x, y, speedX, speedY, size, color) {
@@ -41,6 +44,8 @@ Particle.prototype.update = function() {
 }
 
 function createParticles() {
+  const particleCount = window.innerWidth < minScreenSize ? reducedParticleCount:100;
+
   for (let i = 0; i < particleCount; i++) {
     const x = Math.random() * canvas.width;
     const y = Math.random() * canvas.height;
@@ -99,6 +104,11 @@ function animate() {
   drawParticles();
   updateParticles();
   connectParticles();
+
+  if(window.innerWidth < minScreenSize && particles.length !== reducedParticleCount){
+    particles = [];
+    createParticles();
+  }
 
   requestAnimationFrame(animate);
 }

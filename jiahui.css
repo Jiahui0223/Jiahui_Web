@@ -967,6 +967,8 @@ HERERERERER
     }
     .modal-content{
         /* max-width: 100px; */
+        max-width: none;
+        width: 90%;
         max-height: 70vh;
     }
 }
@@ -991,9 +993,12 @@ HERERERERER
     transform: scale(1.5);
 }
 
+
+
+
 footer{
     border:1px solid rgb(223, 35, 35);
-    height: 200px;
+    /* height: 200px; */
     background-color: #000;
     color: white;
     text-align: center;
@@ -1037,12 +1042,16 @@ footer{
 .footer-logo .text{
     margin-left: 5%;
     font-size: 18px;
-    max-width: 500px;
+    max-width: 400px;
 }
+
+
+
 .footer-catalog {
     display: flex;
     /* justify-content: space-between; */
     margin-top: 1%;
+    /* border:1px solid rgb(36, 202, 72); */
     margin-left: 8%;
     align-items:flex-start;
     text-align: left;
@@ -1078,11 +1087,35 @@ footer{
     width: 100%;
     margin-left: 8%;
     margin-right: 8%;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+    /* border:1px solid rgb(36, 202, 72); */
     /* border:1px solid rgb(204, 48, 61); */
 }
 
 .footer-bottom .terms span{
     margin-right: 15px;
+}
+
+@media screen and (max-width: 425px) {
+    .footer-catalog {
+        flex-wrap: wrap;
+    }
+    .footer-logo .logo{
+        font-size: 25px;
+    }
+    .footer-logo .text{
+        font-size: 15px;
+    }
+    .sub-catalog .title {
+        font-size: 16px;
+    }
+    .sub-catalog .sub-title {
+        margin-top: 8px;
+    }
+    .sub-catalog .sub-title span{
+        font-size: 12px;
+    }
+
 }

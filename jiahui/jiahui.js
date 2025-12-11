@@ -156,3 +156,140 @@ function closeModal(modalId) {
 
 }
 
+
+
+// =============================================
+// INTRO ANIMATION with GSAP - STIFF INSPIRED
+// =============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add intro-active class to body
+    document.body.classList.add('intro-active');
+    
+    // Check if user has seen the intro before
+    const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
+    
+    if (hasSeenIntro) {
+        // Skip intro, show main content directly
+        skipIntro(true);
+        return;
+    }
+
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Create main timeline
+    const introTimeline = gsap.timeline({
+        onComplete: function() {
+            sessionStorage.setItem('hasSeenIntro', 'true');
+        }
+    });
+
+    // Animation Sequence
+    introTimeline
+        // 1. Giant text appears (fade in + scale)
+        .from('.giant-text', {
+            opacity: 0,
+            scale: 0.5,
+            duration: 1.2,
+            ease: 'power3.out'
+        })
+        // 2. Hold for a moment
+        .to({}, {duration: 0.8})
+        // 3. Giant text slides up and out
+        .to('.giant-text', {
+            y: '-100vh',
+            duration: 1.2,
+            ease: 'power2.in'
+        })
+        // 4. Subtitle appears from bottom
+        .to('.intro-subtitle', {
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power2.out'
+        }, '-=0.6')
+        // 5. Hold subtitle
+        .to({}, {duration: 1})
+        // 6. Transition out: subtitle fades, background lightens
+        .to('.intro-subtitle', {
+            opacity: 0,
+            y: -50,
+            duration: 0.6
+        })
+        .to('.intro-container', {
+            backgroundColor: '#f5f1e8',
+            duration: 0.6
+        }, '-=0.6')
+        // 7. Hide intro, show main content
+        .call(() => {
+            const introContainer = document.getElementById('intro-animation');
+            const mainContent = document.getElementById('main-content');
+            
+            introContainer.style.display = 'none';
+            mainContent.style.display = 'block';
+            document.body.classList.remove('intro-active');
+        })
+        // 8. Navbar slides down
+        .from('.navbar', {
+            y: -100,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        })
+        // 9. Main content slides in from right
+        .to('.main-content', {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        }, '-=0.5');
+
+    // Skip button functionality
+    const skipButton = document.getElementById('skip-intro');
+    if (skipButton) {
+        skipButton.addEventListener('click', function() {
+            skipIntro(false);
+        });
+    }
+});
+
+// Skip intro function
+function skipIntro(immediate) {
+    const introContainer = document.getElementById('intro-animation');
+    const mainContent = document.getElementById('main-content');
+
+    document.body.classList.remove('intro-active');
+
+    if (immediate) {
+        // Instant skip
+        introContainer.style.display = 'none';
+        mainContent.style.display = 'block';
+        gsap.set(mainContent, {opacity: 1, x: 0});
+        gsap.set('.navbar', {y: 0, opacity: 1});
+    } else {
+        // Animated skip
+        gsap.to(introContainer, {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+                introContainer.style.display = 'none';
+                mainContent.style.display = 'block';
+                
+                // Animate navbar and content in
+                gsap.from('.navbar', {
+                    y: -100,
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                });
+                
+                gsap.to(mainContent, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                });
+            }
+        });
+    }
+}

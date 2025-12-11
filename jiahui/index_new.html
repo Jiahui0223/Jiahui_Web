@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jiahui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="jiahui.js" defer></script>
+    <title>Jiahui Zhang - Personal Archive</title>
+</head>
+<body>
+    <!-- Intro Stamp Animation -->
+    <div id="intro-stamp" class="intro-stamp-container">
+        <!-- Rotating Stamp -->
+        <svg class="rotating-stamp" viewBox="0 0 200 200">
+            <defs>
+                <path id="circle-path" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+            </defs>
+            <text class="stamp-text">
+                <textPath href="#circle-path">
+                    JIAHUI ZHANG • PERSONAL ARCHIVE • EST. 2023 •
+                </textPath>
+            </text>
+            <circle cx="100" cy="100" r="60" class="stamp-inner-circle"/>
+            <text x="100" y="105" class="stamp-center-text">JZ</text>
+        </svg>
+        <!-- Scroll hint -->
+        <div class="scroll-hint">
+            <p>Scroll to enter</p>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </div>
+
+    <!-- Fixed Stamp (bottom-left corner after scroll) -->
+    <div id="fixed-stamp" class="fixed-stamp">
+        <svg viewBox="0 0 200 200">
+            <defs>
+                <path id="circle-path-fixed" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+            </defs>
+            <text class="stamp-text-small">
+                <textPath href="#circle-path-fixed">
+                    JIAHUI ZHANG • ARCHIVE •
+                </textPath>
+            </text>
+            <circle cx="100" cy="100" r="60" class="stamp-inner-circle"/>
+            <text x="100" y="105" class="stamp-center-text-small">JZ</text>
+        </svg>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <a href="/" class="navbar-brand-link">
+            <div class="navbar-brand">
+                <span class="brand-initials">M. J. </span>
+                <span class="brand-name">Archires</span>
+            </div>
+        </a>
+        <ul class="navbar-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="../file/Jiahui_Resume_2025.pdf" target="_blank">CV</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="navbar-toggle" id="navbar-toggle" onclick="navbarToggleList()">
+            &#9776;
+        </div>
+        <ul class="navbar-list" id="navbar-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="../file/Jiahui_Resume_2025.pdf" target="_blank">CV</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Archive Content -->
+    <div id="main-content" class="archive-main-content">
+
+        <!-- Hero Section -->
+        <section class="archive-hero">
+            <div class="hero-container">
+                <div class="archive-label">PERSONAL ARCHIVE #001</div>
+                <h1 class="hero-title">Jiahui Zhang</h1>
+                <p class="hero-subtitle">Computer Science Graduate Student</p>
+                <p class="hero-affiliation">University of Virginia</p>
+                <div class="hero-divider"></div>
+                <p class="hero-description">
+                    Exploring the intersection of technology and human experience through
+                    research, development, and creative problem-solving.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="archive-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-stamp">BIOGRAPHY</div>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm a passionate Computer Science graduate student at the University of Virginia,
+                        dedicated to advancing technology through innovative research and development.</p>
+                        <p>My journey in computer science has been driven by curiosity and a desire to create
+                        meaningful solutions that impact real-world problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="archive-section alt-bg">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-stamp">ACADEMICS</div>
+                    <h2 class="section-title">Education</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline">
+                    <!-- UVA -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>University of Virginia</h3>
+                                <span class="timeline-date">2023 - Present</span>
+                            </div>
+                            <p class="timeline-degree">Master of Science in Computer Science</p>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Artificial Intelligence, Machine Learning</p>
+                                <p><strong>Coursework:</strong> Advanced Algorithms, Deep Learning, Computer Vision</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more education entries as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="archive-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-stamp">PROFESSIONAL</div>
+                    <h2 class="section-title">Experience</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <div class="card-icon">💼</div>
+                            <div>
+                                <h3>Research Assistant</h3>
+                                <p class="card-organization">University of Virginia</p>
+                                <p class="card-date">2023 - Present</p>
+                            </div>
+                        </div>
+                        <p class="card-description">
+                            Conducting research in machine learning applications...
+                        </p>
+                    </div>
+                    <!-- Add more experience cards -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="archive-section alt-bg">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-stamp">COLLECTION</div>
+                    <h2 class="section-title">Life Gallery</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="gallery-grid">
+                    <!-- Gallery items will be added here -->
+                    <div class="gallery-item">
+                        <img src="../img/uva.jpg" alt="University of Virginia">
+                        <div class="gallery-overlay">
+                            <h4>Charlottesville, VA</h4>
+                            <p>University of Virginia</p>
+                        </div>
+                    </div>
+                    <!-- Add more gallery items -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="archive-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-stamp">CONNECT</div>
+                    <h2 class="section-title">Get in Touch</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-content">
+                    <p class="contact-text">
+                        I'm always interested in hearing about new opportunities, collaborations,
+                        or just connecting with fellow enthusiasts.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:your.email@example.com" class="contact-button">
+                            <span>📧</span> Email
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="contact-button">
+                            <span>💼</span> LinkedIn
+                        </a>
+                        <a href="https://github.com" target="_blank" class="contact-button">
+                            <span>💻</span> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="archive-footer">
+            <div class="footer-container">
+                <p>&copy; 2023 Jiahui Zhang. All rights reserved.</p>
+                <p class="footer-tagline">Personal Archive • Est. 2023</p>
+            </div>
+        </footer>
+
+    </div>
+    <!-- End Main Content -->
+
+</body>
+</html>

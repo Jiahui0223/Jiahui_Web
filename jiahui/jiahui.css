@@ -12,91 +12,142 @@ body .lock-scroll {
   }
 
 /*
- * Navigation Bar
+ * Navigation Bar - Archive Style
  */
- .navbar{
+.navbar {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-
-    background-color: #333;
-    color: #fff;
+    background: linear-gradient(to bottom, rgba(51, 51, 51, 0.98), rgba(51, 51, 51, 0.95));
+    backdrop-filter: blur(10px);
+    color: #e8dcc4;
     height: 60px;
- }
-
-.navbar-brand{
-    display: flex;
-    align-items: center;
-    
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 5%
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(200, 180, 140, 0.3);
+    border-bottom: 2px solid #8b7355;
 }
 
-.brand-initials{
+.navbar-brand-link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand-link:hover {
+    opacity: 0.8;
+}
+
+.navbar-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    margin-left: 5%;
+    animation: slideInLeft 0.8s ease-out;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.brand-initials {
+    width: 150%;
     font-size: 180%;
-    font-weight: bold;
+    font-weight: 600;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-right: 5px;
-    /* font-size: 1em; */
 }
 
 .brand-name {
     font-size: 180%;
-    /* font-size: 1em; */
+    color: #e8dcc4;
+    letter-spacing: 2px;
 }
 
-.navbar-menu{
+/* Navigation Menu for Jiahui Page */
+.navbar-menu {
     display: flex;
+    gap: 40px;
+    margin-right: 5%;
+    animation: slideInRight 0.8s ease-out;
     list-style: none;
+}
 
-    margin-right: 10%;
-    font-size: 130%;
-}
-  
-.navbar-menu li {
-    margin-right: 25px;
-}
-  
-.navbar-menu a, .navbar-list a {
+.navbar-menu a {
     text-decoration: none;
-    transition: color 0.3s ease;
-    color: #fff;
-}
-  
-.navbar-menu a:hover, .navbar-list a:hover{
-    color: #ffca28;
+    font-family: 'Cinzel', serif;
+    font-size: 120%;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    border-bottom: 2px solid transparent;
+    color: #a8d5e2;
 }
 
-.navbar-toggle{
+.navbar-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: #87ceeb;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #87ceeb;
+}
+
+.navbar-menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar-toggle {
     display: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-
     background-color: transparent;
     border: none;
     font-size: 30px;
-    color: #ccc;
-    margin: 2%;
-    /* padding: 10px 20px; */
-    /* border:1px solid rgb(37, 157, 204); */
-    
+    color: #e8dcc4;
+    margin-right: 5%;
+    transition: all 0.3s ease;
 }
 
-.navbar-list{
+.navbar-toggle:hover {
+    color: #d4af37;
+}
+
+.navbar-list {
     display: none;
     list-style: none;
-    z-index: 5;
-
-    background-color: #333;
-    margin-top: -10px;
+    background-color: rgba(51, 51, 51, 0.98);
     width: 100%;
     font-size: 130%;
-    /* border:1px solid rgb(37, 157, 204); */
-    /* margin-right: 10%; */
+    border-top: 1px solid rgba(200, 180, 140, 0.3);
 }
 
 .navbar-list li {
     text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-list a {
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    transition: color 0.3s ease;
+    color: #87ceeb;
+}
+
+.navbar-list a:hover {
+    color: #5eb3e0;
 }
 
 @media screen and (max-width: 768px) {
@@ -1118,4 +1169,186 @@ footer{
         font-size: 12px;
     }
 
+}
+/* Animations for Navigation */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ============================================
+
+/* ============================================
+   INTRO ANIMATION STYLES - STIFF INSPIRED
+   ============================================ */
+
+/* Intro Container */
+.intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #2c2c2c;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Skip Button */
+.skip-button {
+    position: absolute;
+    top: 30px;
+    right: 5%;
+    background: transparent;
+    border: 2px solid #e8dcc4;
+    color: #e8dcc4;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    z-index: 10001;
+}
+
+.skip-button:hover {
+    background: #e8dcc4;
+    color: #2c2c2c;
+}
+
+/* Giant Name */
+.intro-giant-name {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.giant-text {
+    font-family: 'Cinzel', serif;
+    font-size: 20vw;
+    font-weight: 700;
+    color: #e8dcc4;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-shadow: 
+        4px 4px 0 rgba(212, 175, 55, 0.3),
+        8px 8px 0 rgba(212, 175, 55, 0.2),
+        12px 12px 0 rgba(212, 175, 55, 0.1);
+}
+
+/* Subtitle */
+.intro-subtitle {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0;
+}
+
+.intro-subtitle p {
+    font-family: 'Cinzel', serif;
+    color: #e8dcc4;
+    margin: 15px 0;
+    letter-spacing: 0.2em;
+}
+
+.subtitle-line-1 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #d4af37;
+}
+
+.subtitle-line-2 {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.subtitle-line-3 {
+    font-size: 1.1em;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Hide navbar initially */
+body.intro-active .navbar {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* Main Content (initially hidden) */
+.main-content {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+/* Responsive Design for Intro */
+@media screen and (max-width: 768px) {
+    .giant-text {
+        font-size: 18vw;
+    }
+    
+    .subtitle-line-1 {
+        font-size: 1.5em;
+    }
+    
+    .subtitle-line-2 {
+        font-size: 1em;
+    }
+    
+    .subtitle-line-3 {
+        font-size: 0.9em;
+    }
+    
+    .skip-button {
+        font-size: 12px;
+        padding: 8px 16px;
+        top: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .giant-text {
+        font-size: 15vw;
+    }
+    
+    .intro-subtitle {
+        bottom: 15%;
+    }
+    
+    .subtitle-line-1 {
+        font-size: 1.2em;
+    }
+    
+    .subtitle-line-2 {
+        font-size: 0.9em;
+    }
+    
+    .subtitle-line-3 {
+        font-size: 0.8em;
+    }
 }

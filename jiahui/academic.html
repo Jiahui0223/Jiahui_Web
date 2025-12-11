@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jiahui Zhang | Academic</title>
+    <style>
+        /* ========================================
+           全局变量和颜色主题
+           ======================================== */
+        :root {
+            color-scheme: light;
+            --page-bg: #fbfaf8;          /* 页面背景色 */
+            --text-color: #131414;        /* 主文本颜色 */
+            --muted: #6f7068;             /* 次要文本颜色 */
+            --accent: #041833;            /* 强调色 */
+            --card-bg: #ffffff;           /* 卡片背景色 */
+            --border: #dedbd3;            /* 边框颜色 */
+            --section-spacing: 55px;      /* 统一的模块间距 */
+        }
+
+        /* ========================================
+           基础样式
+           ======================================== */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', 'Times', serif;
+            background: var(--page-bg);
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ========================================
+           页面容器
+           ======================================== */
+        .page-wrapper {
+            padding: 36px min(7vw, 110px) 70px;
+        }
+
+        /* ========================================
+           顶部导航栏
+           ======================================== */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1120px;
+            margin: 0 auto 40px;  /* 导航栏下方间距 */
+        }
+        .brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        nav {
+            display: flex;
+            gap: 28px;  /* 导航链接之间的间距 */
+            font-size: 0.95rem;
+        }
+        nav a,
+        nav span {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: opacity 0.2s ease;
+        }
+        nav a:hover {
+            opacity: 0.7;
+        }
+        .nav-disabled {
+            color: var(--muted);
+            pointer-events: none;
+            cursor: default;
+        }
+
+        /* ========================================
+           Hero Section（图片+个人信息）
+           ======================================== */
+        .hero {
+            max-width: 860px;
+            margin: 0 auto var(--section-spacing);  /* 统一的底部间距 */
+            display: grid;
+            grid-template-columns: minmax(220px, 320px) minmax(280px, 1fr);
+            gap: 28px;  /* 照片和文字之间的间距，从32px改为28px更紧凑 */
+            align-items: center;
+        }
+        /* 照片容器 */
+        .hero figure {
+            margin: 0;
+            background: #f1f0ec;
+            padding: 12px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            justify-self: center;
+            width: 100%;
+            max-width: 320px;
+        }
+        .hero img {
+            border-radius: 12px;
+            object-fit: cover;
+            height: auto;
+        }
+        /* 右侧个人信息 */
+        .hero-content h1 {
+            font-size: 1.2rem;  /* 职位信息的字体大小 */
+            font-weight: 500;
+            margin: 0 0 1rem;  /* 职位信息和下方列表的间距 */
+            color: var(--accent);
+            line-height: 1.5;
+        }
+        .hero-meta-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;  /* 从1.6rem 0 0改为0，更紧凑 */
+            display: grid;
+            gap: 0.4rem;  /* 列表项之间的间距，从0.5rem改为0.4rem更紧凑 */
+            font-size: 0.98rem;
+            color: var(--text-color);
+        }
+        .hero-meta-list li {
+            line-height: 1.4;
+        }
+        /* CV链接样式 */
+        .hero-meta-list a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+        .hero-meta-list a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           Section通用样式
+           ======================================== */
+        main section {
+            max-width: 1120px;
+            margin: 0 auto var(--section-spacing);  /* 统一的底部间距 */
+        }
+        .section-title {
+            font-size: 1.3rem;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 16px;  /* 标题和内容之间的间距，从18px改为16px更紧凑 */
+            color: var(--accent);
+        }
+        .info-block {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* ========================================
+           About Me Section
+           ======================================== */
+        .about-section p {
+            margin-top: 0;
+            margin-bottom: 0.9rem;  /* 段落之间的间距，从1rem改为0.9rem更紧凑 */
+            font-size: 1rem;
+        }
+
+        /* ========================================
+           Recent Updates Section
+           ======================================== */
+        .updates-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;  /* 每条更新之间的间距，从2px改为0.5rem (8px) */
+        }
+        .updates-list li {
+            display: flex;
+            gap: 6px;  /* 日期和内容之间的间距 */
+            align-items: baseline;
+            flex-wrap: nowrap;
+        }
+        .updates-list p {
+            margin: 0;
+        }
+        .updates-list time {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+            min-width: 95px;
+        }
+
+        /* ========================================
+           Projects Section
+           ======================================== */
+        .projects-section {
+            margin-top: 70px;  /* Projects section额外的顶部间距，增加与Updates的距离 */
+        }
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;  /* 项目卡片之间的间距，从28px改为22px更紧凑 */
+        }
+        .project-card {
+            display: grid;
+            grid-template-columns: minmax(190px, 240px) minmax(260px, 1fr);
+            gap: 20px;  /* 项目图片和文字之间的间距，从24px改为20px更紧凑 */
+            padding: 20px;  /* 卡片内边距，从22px改为20px更紧凑 */
+            border-radius: 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            width: 100%;
+        }
+        .project-card img {
+            border-radius: 12px;
+            object-fit: cover;
+            height: 100%;
+        }
+        .project-card h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .project-card p {
+            margin: 8px 0 0;
+        }
+        .project-tags {
+            margin-top: 10px;  /* 标签距离上方的间距，从12px改为10px更紧凑 */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;  /* 标签之间的间距，从10px改为8px更紧凑 */
+        }
+        .project-tags span {
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: #eef0f3;
+        }
+
+        /* ========================================
+           页脚
+           ======================================== */
+        footer {
+            max-width: 1120px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.92rem;
+            color: var(--muted);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: var(--text-color);
+        }
+
+        /* ========================================
+           响应式设计 - 平板
+           ======================================== */
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+            nav {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            .hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           响应式设计 - 手机
+           ======================================== */
+        @media (max-width: 640px) {
+            .updates-list li {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- ========================================
+             顶部导航栏 - Header
+             ======================================== -->
+        <header>
+            <!-- 左侧品牌名称 -->
+            <div class="brand">Jiahui Zhang</div>
+            <!-- 右侧导航链接 -->
+            <nav>
+                <a href="index.html">Home</a>
+                <span class="nav-disabled" aria-disabled="true">Publication</span>
+                <a href="https://github.com/Jiahui0223" target="_blank" rel="noopener">GitHub</a>
+                <span class="nav-disabled" aria-disabled="true">Google Scholar</span>
+                <a href="../file/Jiahui_Resume_2025_V1.pdf" target="_blank" rel="noopener">CV</a>
+            </nav>
+        </header>
+
+        <main>
+        <!-- ========================================
+             Hero Section - 照片和个人信息
+             ======================================== -->
+        <section class="hero">
+            <!-- 左侧：照片 -->
+            <figure>
+                <img src="../img/jiahui.jpg" alt="Jiahui Zhang portrait" />
+            </figure>
+            <!-- 右侧：个人信息 -->
+            <div class="hero-content">
+                <!-- 第一行：职位 · 实验室 · 学校 -->
+                <h1>Research Assistant · Computer Vision Lab · University of Virginia</h1>
+                <!-- 下方详细信息列表 -->
+                <ul class="hero-meta-list">
+                    <li>School of Engineering & Applied Science · Department of Computer Science</li>
+                    <li>Email: jiahui9923 [at] gmail [dot] com</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========================================
+             About Me Section - 个人简介
+             ======================================== -->
+        <section class="about-section info-block">
+            <div class="section-title">About Me</div>
+            <p>
+                I am a Research Assistant in the Computer Vision Lab at the University of Virginia, working under the guidance of Prof. Zezhou Cheng. 
+                My research focuses on 3D computer vision, particularly multi-frame scene understanding, geometry-grounded perception, and transformer-based approaches for large-scale spatial reasoning. 
+                Broadly, I am interested in how visual systems integrate temporal, geometric, and structural information to form coherent 3D representations of complex environments. 
+                I aim to advance fundamental methods in visual scene modeling and contribute to applications in ecology, robotics, and large-scale environmental analysis.
+            </p>
+        </section>
+
+        <!-- ========================================
+             Recent Updates Section - 最近动态
+             ======================================== -->
+        <section class="info-block">
+            <div class="section-title">Recent Updates</div>
+            <ul class="updates-list">
+                <!-- 每条更新包含日期(time)和内容(p) -->
+                <li>
+                    <time>Aug 2025</time>
+                    <p>Expected graduation from University of Virginia with M.S. in Computer Science.</p>
+                </li>
+                <li>
+                    <time>Jun 2024</time>
+                    <p>Started working as a Research Assistant in the Computer Vision Lab at UVA.</p>
+                </li>
+                <li>
+                    <time>Dec 2022</time>
+                    <p>Graduated from Portland State University.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ========================================
+             Projects Section - 项目展示
+             ======================================== -->
+        <section class="info-block projects-section">
+            <div class="section-title">Projects</div>
+            <div class="projects">
+                <!-- Project 2 - Multi-Frame 3D Perception -->
+                <article class="project-card">
+                    <!-- 项目图片（左侧，用户自己添加） -->
+                    <img src="academic/anything.png" alt="Multi-Frame 3D Perception visualization" />
+                    <div>
+                        <!-- 项目标题 -->
+                        <h3>Multi-Frame 3D Perception for Large-Scale Video Sequences</h3>
+                        <!-- 项目描述 -->
+                        <p>
+                            An end-to-end multi-frame 3D perception system developed to leverage temporal consistency across large video datasets.
+                            The pipeline introduces SE(3)-based sequence sampling, high-throughput data processing for the CA-1M dataset, and a unified
+                            training framework that integrates multi-objective losses and Hungarian matching. The system establishes a foundation for
+                            robust temporal reasoning and large-scale 3D scene reconstruction.
+                            [Preparing for submission to ECCV 2026]
+                        </p>
+                        <!-- 项目技术标签 -->
+                        <div class="project-tags">
+                            <span>3D Perception</span>
+                            <span>Temporal Consistency</span>
+                            <span>SE(3)</span>
+                            <span>Hungarian Matching</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 1 - Transformer-Based Tree Segmentation -->
+                <article class="project-card">
+                    <!-- 项目图片（左侧，用户自己添加） -->
+                    <img src="academic/treeseg.png" alt="Tree point cloud segmentation" />
+                    <div>
+                        <!-- 项目标题 -->
+                        <h3>Transformer-Based Tree Point Cloud Segmentation</h3>
+                        <!-- 项目描述 -->
+                        <p>
+                            A transformer-based framework designed for joint semantic and instance segmentation of large-scale tree point clouds.
+                            The approach incorporates hierarchical geometric priors that reflect biological tree structure and employs a sparse 3D
+                            transformer to model long-range spatial dependencies. A query-based decoding head enables scalable instance prediction
+                            without clustering, offering an efficient solution for forestry-scale 3D understanding.
+                        </p>
+                        <!-- 项目技术标签 -->
+                        <div class="project-tags">
+                            <span>Transformer</span>
+                            <span>Point Cloud</span>
+                            <span>3D Segmentation</span>
+                            <span>Geometric Priors</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        </main>
+
+        <!-- ========================================
+             页脚 - Footer
+             ======================================== -->
+        <footer>
+            <span>© <span id="year"></span> Jiahui Zhang</span>
+            <a href="mailto:jiahui9923@gmail.com">jiahui9923@gmail.com</a>
+        </footer>
+    </div>
+
+    <!-- ========================================
+         JavaScript - 动态年份更新
+         ======================================== -->
+    <script>
+        // 自动更新页脚的年份为当前年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -61,7 +61,7 @@ const PHOTO_ITEMS = [
   { id: '1',  img: '/img/gallery/1jiahui.jpg',  url: '#', height: 720 },
   { id: '2',  img: '/img/gallery/2jiahui.jpg',  url: '#', height: 540 },
   { id: '3',  img: '/img/gallery/3jiahui.jpg',  url: '#', height: 880 },
-  { id: '4',  img: '/img/gallery/4jiahui.JPG',  url: '#', height: 620 },
+  { id: '4',  img: '/img/gallery/4jiahui.jpg',  url: '#', height: 620 },
   { id: '5',  img: '/img/gallery/5jiahui.jpg',  url: '#', height: 780 },
   { id: '6',  img: '/img/gallery/6jiahui.jpg',  url: '#', height: 540 },
   { id: '7',  img: '/img/gallery/7jiahui.jpg',  url: '#', height: 700 },
